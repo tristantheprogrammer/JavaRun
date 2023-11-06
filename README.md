@@ -1,5 +1,7 @@
 Project Name: Java Run
+
 Team Name: The Mobile Gamer
+
 Team Member: Tristan Toma
 
 I am attempting to build an endless runner game that can be played on mobile devices. This game will be similar to one of the most famous endless runner games of all time, Temple Run. I want to build this game because I plan on becoming a Video Game Developer when I grow up. It will be useful to keep people entertained throughout their day. Some people have very stressful days and maybe my game could keep them not stressed. It will be used on mobile devices by people of all ages.
