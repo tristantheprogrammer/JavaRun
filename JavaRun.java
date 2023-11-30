@@ -9,7 +9,6 @@ import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Font;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
-import java.util.Iterator;
 import java.util.List;
 import java.util.Random;
 import java.util.concurrent.CopyOnWriteArrayList;
@@ -119,9 +118,6 @@ public class JavaRun extends Application {
             return; // Stop the game loop
         }
 
-        // Check for successful jump over obstacles
-        checkJumpOverObstacles();
-
         // Create new obstacles periodically
         if (Math.random() < 0.002) {
             createObstacle();
@@ -155,26 +151,7 @@ public class JavaRun extends Application {
             }
         }
         return false; // No collision
-    }
-
-    private void checkJumpOverObstacles() {
-        Iterator<Rectangle> iterator = obstacles.iterator();
-        while (iterator.hasNext()) {
-            Rectangle obstacle = iterator.next();
-            double playerBottom = player.getTranslateY() + player.getHeight();
-    
-            if (!isJumping && player.getBoundsInParent().intersects(obstacle.getBoundsInParent())
-                    && playerBottom < obstacle.getTranslateY() && playerBottom > obstacle.getTranslateY() - 5) {
-                // Player successfully jumped over the obstacle
-                score += 100;
-                scoreText.setText("Score: " + score);
-    
-                // Remove the obstacle
-                iterator.remove();
-                createObstacle();
-            }
-        }
-    }    
+    }  
 
     private void showGameOverScreen() {
         // Create a game over scene
