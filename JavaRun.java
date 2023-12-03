@@ -101,7 +101,6 @@ public class JavaRun extends Application {
 
         player.setTranslateY(newY);
 
-        // Move obstacles
         moveObstacles();
 
         obstacleDistance += 5;
